@@ -1,6 +1,6 @@
 # Data Structures and Algorithms (DSA)
 
-In this repository applyin the paradigm of Object Oriented Programming, I code from scratch the data structures and algoritms (presented in the following sections) as packages of classes. Besides, unit testing is made with `unitroot` and `tox`.
+In this repository applying the **Object Oriented Programming** paradigm, I code from scratch the data structures and algoritms (presented in the following sections) as packages of classes. Besides, I make unit testing with `unitroot` and `tox`.
 
 ## Data structures
 
