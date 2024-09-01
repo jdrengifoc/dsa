@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linkedlist"
+version = "0.1.0"
+description = "A description of your package"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Juan David Rengifo Castro", email = "jdrengifoc@eafit.edu.co" }
+]
+dynamic = ["dependencies"]
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools.packages.find]
+where = ["src/linkedlist"]

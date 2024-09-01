@@ -1,2 +1,3 @@
-import linkedlist
-help(linkedlist)
+from linkedlist import LinkedList
+
+ll = LinkedList()
