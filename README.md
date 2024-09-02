@@ -6,6 +6,11 @@ In this repository applying the **Object Oriented Programming** paradigm, I code
 
 1. [Linked Lists](src/linkedlist)
     - Stacks
+    - Queues
+2. Hash tables (in progress)
+3. Trees
+    - Binary tree: each node has at most 2 children.
+4. Graphs
 
 ## Algorithms
 

@@ -100,7 +100,7 @@ class Stack():
 
     def __str__(self) -> str:
         current_node = self.top
-        msg = ""
+        msg = "Top: "
         while current_node:
             msg = msg + f'{current_node.value} -> '
             current_node = current_node.next
@@ -129,3 +129,36 @@ class Stack():
             return self.top.value
         else:
             return None
+        
+class Queue():
+    def __init__(self) -> None:
+        self.head = None
+        self.tail = None
+
+    def __str__(self) -> str:
+        current_node = self.head
+        msg = "head: "
+        while current_node:
+            msg = msg + f"{current_node.value} -> "
+            current_node = current_node.next
+        return msg + "None"
+    
+    def enqueue(self, value) -> None:
+        new_node = Node(value)
+        if self.head:
+            new_node.next = self.head
+            self.head = new_node
+        else:
+            self.head = new_node
+            self.tail = new_node
+
+    def dequeue(self):
+        if self.head:
+            current_head = self.head
+            self.head = current_head.next
+            current_head.next = None
+            if self.head is None:
+                self.tail = None
+
+
+
