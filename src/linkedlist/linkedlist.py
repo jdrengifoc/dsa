@@ -1,14 +1,14 @@
 class Node():
-    def __init__(self, value):
+    def __init__(self, value) -> None:
         self.value = value
         self.next = None
 
 class LinkedList():
-    def __init__(self):
+    def __init__(self) -> None:
         self.head = None
         self.tail = None
     
-    def __str__(self):
+    def __str__(self) -> str:
         current_node = self.head
         msg = ""
         while current_node:
@@ -17,7 +17,7 @@ class LinkedList():
         
         return msg + "None"
 
-    def length(self):
+    def length(self) -> int:
         cont = 0
         current_node = self.head
         while current_node:
@@ -25,7 +25,7 @@ class LinkedList():
             current_node = current_node.next
         return cont
     
-    def insert_at_head(self, value):
+    def insert_at_head(self, value) -> None:
         new_node = Node(value)
         if self.head:
             new_node.next = self.head
@@ -34,7 +34,7 @@ class LinkedList():
             self.head = new_node
             self.tail = new_node
     
-    def insert_at_tail(self, value):
+    def insert_at_tail(self, value) -> None:
         new_node = Node(value)
         if self.tail:
             self.tail.next = new_node
@@ -46,7 +46,7 @@ class LinkedList():
     def remove_at_head(self):
         self.head = self.head.next
 
-    def search(self, value):
+    def search(self, value) -> bool:
         current_node = self.head
         while current_node:
             if current_node.value == value:
@@ -55,7 +55,7 @@ class LinkedList():
         
         return False
 
-    def insert_at(self, value, idx):
+    def insert_at(self, value, idx: int) -> None:
         if idx < 0:
             raise ValueError("idx must be a non-negative integer.")
         elif idx == 0:
@@ -74,7 +74,7 @@ class LinkedList():
             except:
                 raise ValueError("idx must be at most the number of nodes of the list.")
     
-    def delete_at(self, idx):
+    def delete_at(self, idx: int) -> None:
         if idx < 0:
             raise ValueError("idx must be a non-negative integer.")
         elif idx == 0:
@@ -91,3 +91,41 @@ class LinkedList():
                 prev.next = current_node.next
             except:
                 raise ValueError("idx must be at most the number of nodes of the list.")
+            
+
+class Stack():
+    def __init__(self) -> None:
+        self.top = None
+        self.len = 0
+
+    def __str__(self) -> str:
+        current_node = self.top
+        msg = ""
+        while current_node:
+            msg = msg + f'{current_node.value} -> '
+            current_node = current_node.next
+        
+        return msg + 'None'
+
+    def push(self, value) -> None:
+        new_node = Node(value)
+        if self.top:
+            new_node.next = self.top
+        self.top = new_node
+        self.len += 1
+
+    def pop(self):
+        if self.top is None:
+            return None
+        else:
+            prev_top = self.top
+            self.top = self.top.next
+            prev_top.next = None
+            self.len -= 1
+            return prev_top.value
+    
+    def peek(self):
+        if self.top:
+            return self.top.value
+        else:
+            return None

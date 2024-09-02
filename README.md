@@ -5,13 +5,15 @@ In this repository applying the **Object Oriented Programming** paradigm, I code
 ## Data structures
 
 1. [Linked Lists](src/linkedlist)
+    - Stacks
 
 ## Algorithms
 
 | Algorithm | Description | Data Structure | Complexity |
 |-----------|-------------|----------------|------------|
-|           |             |                |            |
-|           |             |                |            |
+|    pop    |             |      stack     |   $O(1)$   |
+|    push   |             |      stack     |   $O(1)$   |
+|    peek   |             |      stack     |   $O(1)$   |
 |           |             |                |            |
 |           |             |                |            |
 |           |             |                |            |
